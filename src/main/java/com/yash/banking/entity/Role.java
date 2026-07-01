@@ -19,4 +19,9 @@ public class Role extends BaseEntity {
 
     @Column(name = "description", length = 255)
     private String description;
+
+    public Role(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
 }

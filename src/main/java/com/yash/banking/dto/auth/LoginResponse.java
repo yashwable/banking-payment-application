@@ -1,0 +1,4 @@
+package com.yash.banking.dto.auth;
+
+public class LoginResponse {
+}
