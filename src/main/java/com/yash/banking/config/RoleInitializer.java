@@ -1,15 +1,15 @@
 package com.yash.banking.config;
 
-import com.yash.banking.entity.Role;
 import com.yash.banking.enums.UserRole;
-import com.yash.banking.repository.RoleRepository;
+import com.yash.banking.role.entity.Role;
+import com.yash.banking.role.repository.RoleRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class RoleDataInitializer implements CommandLineRunner {
+public class RoleInitializer implements CommandLineRunner {
 
     private final RoleRepository roleRepository;
 

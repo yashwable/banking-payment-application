@@ -1,6 +1,8 @@
-package com.yash.banking.entity;
+package com.yash.banking.user.entity;
 
+import com.yash.banking.common.entity.BaseEntity;
 import com.yash.banking.enums.UserStatus;
+import com.yash.banking.role.entity.Role;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

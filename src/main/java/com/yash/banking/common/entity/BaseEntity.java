@@ -1,4 +1,4 @@
-package com.yash.banking.entity;
+package com.yash.banking.common.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;

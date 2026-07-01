@@ -1,5 +1,6 @@
-package com.yash.banking.entity;
+package com.yash.banking.role.entity;
 
+import com.yash.banking.common.entity.BaseEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;

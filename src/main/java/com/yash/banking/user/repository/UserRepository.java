@@ -1,6 +1,6 @@
-package com.yash.banking.repository;
+package com.yash.banking.user.repository;
 
-import com.yash.banking.entity.User;
+import com.yash.banking.user.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

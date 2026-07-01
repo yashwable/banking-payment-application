@@ -1,6 +1,6 @@
-package com.yash.banking.repository;
+package com.yash.banking.role.repository;
 
-import com.yash.banking.entity.Role;
+import com.yash.banking.role.entity.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
