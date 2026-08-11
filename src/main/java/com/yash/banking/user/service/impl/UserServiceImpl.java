@@ -1,5 +1,6 @@
 package com.yash.banking.user.service.impl;
 
+import com.yash.banking.auth.dto.CurrentUserResponse;
 import com.yash.banking.common.exception.DuplicateResourceException;
 import com.yash.banking.common.exception.ResourceNotFoundException;
 import com.yash.banking.common.generator.EmployeeIdGenerator;
@@ -15,6 +16,7 @@ import com.yash.banking.user.service.UserService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -101,6 +103,21 @@ public class UserServiceImpl implements UserService {
         user.setFailedLoginAttempts(0);
 
         user.setAccountLocked(false);
+    }
+
+    public CurrentUserResponse getCurrentUser(String employeeId) {
+        User user = userRepository.findByEmployeeId(employeeId)
+                .orElseThrow(() ->
+                        new UsernameNotFoundException(
+                                "Employee not found: " + employeeId));
+
+        return CurrentUserResponse.builder()
+                .employeeId(user.getEmployeeId())
+                .firstName(user.getFirstName())
+                .lastName(user.getLastName())
+                .officialEmail(user.getOfficialEmail())
+                .role(user.getRole().getName())
+                .build();
     }
 
 
